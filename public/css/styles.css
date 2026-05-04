@@ -21,7 +21,6 @@ nav {
 	font-size: 6vw;
 	text-align: center;
 	color: white;
-	padding: .7%;
 	transition: font-size .5s ease;
 }
 
@@ -104,6 +103,7 @@ body {
 	width: 35vw;
 	justify-content: center;
 	object-fit: cover;
+	margin: 2%;
 }
 
 .section-header {
