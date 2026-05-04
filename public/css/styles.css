@@ -52,6 +52,7 @@ nav {
 	padding: .5%;
 	border: 1px solid black;
 	transform: scale(1.1);
+	background-color: white;
 }
 
 .social {
