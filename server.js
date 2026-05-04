@@ -13,7 +13,7 @@ app.get('/gridImages', (req, res) => {
   const dirPath = path.join(__dirname, 'public/gridImages');
   fs.readdir(dirPath, (err, files) => {
     if (err) return res.status(500).send('Error loading images');
-    res.json(files);
+    res.json(files.map(file => `/gridImages/${file}`));
   });
 });
 
