@@ -45,7 +45,7 @@ fetch('/gridImages')
     const grid = document.getElementById('grid');
     images.forEach(img => {
       const el = document.createElement('img');
-      el.src = `gridImages/${img}`;
+      el.src = img;
       grid.appendChild(el);
     });
   });
