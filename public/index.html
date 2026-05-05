@@ -36,6 +36,9 @@
 	<div class="section-header">
   	<span>Images</span>
 	</div>
+<div id="lightbox" class="lightbox">
+  	<img id="lightbox-img" alt=""/>
+	</div>
 
 	<div class="grid" id="grid"></div>
 
@@ -61,12 +64,12 @@ window.addEventListener('scroll', () => {
 
     images.forEach(img => {
       const el = document.createElement('img');
-      el.src = `gridImages/${img}`;
+      el.src = img;
 
       // click to open fullscreen
       el.addEventListener('click', () => {
         lightbox.classList.add('active');
-        lightboxImg.src = `gridImages/${img}`;
+        lightboxImg.src = img;
       });
 
       grid.appendChild(el);
