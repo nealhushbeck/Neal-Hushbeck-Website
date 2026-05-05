@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Neal Hushbeck | Filmmaker</title>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="https://use.typekit.net/wdf7tnx.css">
+<meta name="viewport" content="width-device-width, initial-scale-1">
+<meta name="description" content="Neal Hushbeck | Filmmaker">
+</head>
+
+	<nav class="desktopNav">
+		
+		<a href="index.html"><div class="pageHeader" >Neal Hushbeck</div></a>
+		
+		<div class="navItems"> 
+		<a href="#" class="selected">PROJECTS</a> 
+		<a href="resume.html">RESUME</a> 
+		<a href="contact.html">CONTACT</a> 
+		</div>
+	
+		<div class="social">
+		<a href="https://www.youtube.com/@nealhushbeckfilm"><img src="images/social.png" alt="Youtube"></a>
+		<a href="https://www.instagram.com/nealhushbeck/"><img src="images/instagram.png" alt="Instagram"></a>
+		</div>
+		
+	</nav>
+	
+<body>
+	
+<script>
+const header = document.querySelector('.pageHeader');
+const nav = document.querySelector('.navItems');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    header.classList.add('shrink');
+	   nav.classList.add('shrink');
+  } else {
+    header.classList.remove('shrink');
+	  nav.classList.remove('shrink');
+  }
+});
+</script>
+<script>
+	fetch('/gridImages')
+  .then(res => res.json())
+  .then(images => {
+    const grid = document.getElementById('grid');
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    images.forEach(img => {
+      const el = document.createElement('img');
+      el.src = `gridImages/${img}`;
+
+      // click to open fullscreen
+      el.addEventListener('click', () => {
+        lightbox.classList.add('active');
+        lightboxImg.src = `gridImages/${img}`;
+      });
+
+      grid.appendChild(el);
+    });
+
+    // click background to close
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+    });
+  });
+	</script>
+</body>
+
+</html>
+
