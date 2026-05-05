@@ -100,7 +100,7 @@ body {
 }
 
 .headGrid {
-		padding-top: 15%;
+		padding-top: 12.5%;
 		display: grid;
 		grid-template-columns: auto auto auto;
 		grid-gap: 20px;
